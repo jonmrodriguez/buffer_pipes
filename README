@@ -1,0 +1,6 @@
+like named pipes, but easier to work with because they cant break
+
+usage:
+blah | to_buffer my_buffer_file.txt # need not exist yet
+from_buffer my_buffer_file.txt # need not exist yet for reading either
+
