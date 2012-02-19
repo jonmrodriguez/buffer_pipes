@@ -22,7 +22,9 @@ while True:
 
     # TODO using buffer_file + '.lock', allow multiple writers, e.g. to aggregate a bunch of stderrs into one console
     with open(buffer_file, 'a') as append_to:
-        append_to.write(text)
+
+        print >> append_to, text # using print so it appends a newline
+
 
 
 

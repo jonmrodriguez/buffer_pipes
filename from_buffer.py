@@ -28,9 +28,12 @@ while True:
 
         with open(buffer_file, 'r+') as fil:
             text = fil.read()
-            fil.truncate() # empties it
+            
+            # empty the file
+            fil.seek(0) # arg is byte offset
+            fil.truncate() # delete everything under and after the cursor
 
-        print text
+        print text, # the newline, if desired at all, goes in the buffer file
 
     except IOError:
         # file doesn't exist yet. README mandates that that's perfectly fine usage (for ease of use, allows running from before to without an explicit touch)
