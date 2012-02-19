@@ -33,7 +33,9 @@ while True:
             fil.seek(0) # arg is byte offset
             fil.truncate() # delete everything under and after the cursor
 
-        print text, # the newline, if desired at all, goes in the buffer file
+        # without this if, the behavior of "print text," is to print a single space instead of nothing
+        if len(text) > 0:
+            print text, # the newline, if desired at all, goes in the buffer file
 
     except IOError:
         # file doesn't exist yet. README mandates that that's perfectly fine usage (for ease of use, allows running from before to without an explicit touch)
